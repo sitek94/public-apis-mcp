@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "git+https://github.com/sitek94/public-apis-mcp.git"
 	},
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"type": "module",
 	"main": "build/index.mjs",
 	"bin": {
@@ -23,8 +23,8 @@
 		"inspector": "bunx @modelcontextprotocol/inspector build/index.mjs",
 		"inspector:debug": "DEBUG=true bun inspector",
 		"update-categories": "bun src/update-categories.ts",
-    "prepublishOnly": "bun run verify",
-    "local-release": "changeset version && changeset publish"
+		"prepublishOnly": "bun run verify",
+		"local-release": "changeset version && changeset publish"
 	},
 	"dependencies": {
 		"@changesets/cli": "^2.29.3",
@@ -33,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
 		"@types/node": "^22.15.17",
 		"typescript": "^5.8.3"
 	}
