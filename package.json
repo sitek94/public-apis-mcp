@@ -1,0 +1,39 @@
+{
+  "name": "public-apis-mcp",
+  "description": "MCP server for listing public APIs from github.com/public-apis",
+  "keywords": [
+    "mcp",
+    "public-apis"
+  ],
+  "author": "Maciek Sitkowski <msitkowski94@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sitek94/public-apis-mcp.git"
+  },
+  "version": "0.0.8",
+  "type": "module",
+  "main": "build/index.mjs",
+  "bin": {
+    "public-apis-mcp": "build/index.mjs"
+  },
+  "files": ["build"],
+  "scripts": {
+    "start": "node build/index.mjs",
+    "watch": "tsc --watch",
+    "build": "node esbuild.config.js",
+    "inspector": "pnpm dlx @modelcontextprotocol/inspector build/index.mjs",
+    "inspector:debug": "DEBUG=true pnpm inspector",
+    "update-categories": "tsx src/update-categories.ts",
+    "prepublish": "pnpm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "esbuild": "^0.25.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@9.15.9+sha256.cf86a7ad764406395d4286a6d09d730711720acc6d93e9dce9ac7ac4dc4a28a7"
+}

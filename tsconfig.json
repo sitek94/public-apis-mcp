@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+    "lib": ["es2024"],
+		"resolveJsonModule": true,
+		"outDir": "./build",
+		"rootDir": "./src",
+		"strict": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"allowJs": true,
+		"checkJs": false
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "build", "**/*.test.ts"]
+}
