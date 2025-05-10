@@ -4,13 +4,14 @@ import {z} from 'zod'
 import {fetchPublicApis} from './public-apis.js'
 import {logger} from './logger.js'
 import categories from './public-apis-categories.json' assert {type: 'json'}
+import packageJson from '../package.json' assert {type: 'json'}
 
 async function main() {
   logger.info('Starting MCP server...')
 
   const server = new McpServer({
     name: 'Public APIs',
-    version: '0.0.1',
+    version: packageJson.version,
   })
 
   server.tool(
@@ -55,7 +56,7 @@ async function main() {
       } catch (error) {
         return {
           isError: true,
-          content: [{type: 'text', text: `Error: ${error.message}`}],
+          content: [{type: 'text', text: `Error: ${(error as Error).message}`}],
         }
       }
     },

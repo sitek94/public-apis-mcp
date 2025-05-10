@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/sitek94/public-apis-mcp.git"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "main": "build/index.mjs",
   "bin": {
@@ -19,12 +19,11 @@
   "files": ["build"],
   "scripts": {
     "start": "node build/index.mjs",
-    "watch": "tsc --watch",
-    "build": "node esbuild.config.js",
-    "inspector": "pnpm dlx @modelcontextprotocol/inspector build/index.mjs",
-    "inspector:debug": "DEBUG=true pnpm inspector",
-    "update-categories": "tsx src/update-categories.ts",
-    "prepublish": "pnpm run build"
+    "build": "bun build src/index.ts --outfile build/index.mjs --target node",
+    "dev": "bun build --watch src/index.ts --outfile build/index.mjs --target node",
+    "inspector": "bunx @modelcontextprotocol/inspector build/index.mjs",
+    "inspector:debug": "DEBUG=true bun inspector",
+    "update-categories": "bun src/update-categories.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.11.1",
@@ -32,8 +31,6 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
-    "esbuild": "^0.25.4",
     "typescript": "^5.8.3"
-  },
-  "packageManager": "pnpm@9.15.9+sha256.cf86a7ad764406395d4286a6d09d730711720acc6d93e9dce9ac7ac4dc4a28a7"
+  }
 }
