@@ -24,7 +24,8 @@
 		"inspector:debug": "DEBUG=true bun inspector",
 		"update-categories": "bun src/update-categories.ts",
 		"prepublishOnly": "bun run verify",
-		"local-release": "changeset version && changeset publish"
+		"local-release": "changeset version && changeset publish",
+		"changeset": "changeset"
 	},
 	"dependencies": {
 		"@changesets/cli": "^2.29.3",
