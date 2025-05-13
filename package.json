@@ -1,7 +1,10 @@
 {
 	"name": "public-apis-mcp",
 	"description": "MCP server for listing public APIs from github.com/public-apis",
-	"keywords": ["mcp", "public-apis"],
+	"keywords": [
+		"mcp",
+		"public-apis"
+	],
 	"author": "Maciek Sitkowski <msitkowski94@gmail.com>",
 	"repository": {
 		"type": "git",
@@ -13,15 +16,17 @@
 	"bin": {
 		"public-apis-mcp": "build/index.mjs"
 	},
-	"files": ["build"],
+	"files": [
+		"build"
+	],
 	"scripts": {
 		"start": "node build/index.mjs",
 		"build": "bun build src/index.ts --outfile build/index.mjs --target node",
-		"dev": "bun build --watch src/index.ts --outfile build/index.mjs --target node",
+		"build:watch": "bun build --watch src/index.ts --outfile build/index.mjs --target node",
 		"lint:fix": "biome check --write .",
 		"verify": "bun run build && bun lint:fix && tsc --noEmit",
 		"inspector": "bunx @modelcontextprotocol/inspector build/index.mjs",
-		"inspector:debug": "DEBUG=true bun inspector",
+		"inspector:debug": "DEBUG=true bunx @modelcontextprotocol/inspector build/index.mjs",
 		"update-categories": "bun src/update-categories.ts",
 		"prepublishOnly": "bun run verify",
 		"local-release": "changeset version && changeset publish"

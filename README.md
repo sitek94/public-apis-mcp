@@ -1,10 +1,10 @@
 # Public APIs MCP
 
-A simple MCP server for listing and searching public APIs from [public-apis](https://github.com/public-apis/public-apis).
+List and search public APIs from [public-apis](https://github.com/public-apis/public-apis).
 
-## Installation
+## Usage
 
-Add the following to your `mcp.json`:
+Add to your `mcp.json` to use latest version from npm:
 
 ```json
 {
@@ -19,17 +19,22 @@ Add the following to your `mcp.json`:
 
 ## Development
 
-```bash
-# Install dependencies
-pnpm install
+- Requires [Bun](https://bun.sh/)
+- Install: `bun install`
+- Build: `bun run build`
+- Watch: `bun run build:watch`
+- Inspector: `bun inspector`
 
-# Build
-pnpm build
+To use your local build add the following to your `mcp.json`:
 
-# Start MCP server
-pnpm start
-
-# or Development using MCP Inspector
-pnpm inspector
-```
-
+```json
+{
+  "public-apis-mcp": {
+    "name": "Public APIs",
+    "description": "Get list of public APIs from github.com/public-apis",
+    "command": "node",
+    "args": [
+      "<PATH_TO_THIS_REPO>/build/index.mjs"
+    ]
+  }
+}
