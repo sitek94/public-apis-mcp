@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "public-apis-mcp": {
+      "name": "Public APIs",
+      "description": "Get list of public APIs from github.com/public-apis",
+      "command": "node",
+      "args": [
+        "<PATH_TO_DIRECTORY_WITH_MCP>/public-apis-mcp/build/index.mjs"
+      ]
+    }
+  }
+}
